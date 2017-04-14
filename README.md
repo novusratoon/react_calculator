@@ -1,10 +1,12 @@
 # ReactCalculator
+
 It is simple implementation of calculator in React.
 
-To run the project 
-
+To build the project 
 # npm run build
+
+To run on localhost 
 # npm run start
  
-The Project will open at the beginning
+At the beginning the Project will open at
 # http://localhost:8080/ 
