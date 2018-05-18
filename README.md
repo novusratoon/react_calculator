@@ -1,6 +1,6 @@
 # ReactCalculator
 
-It is repo to understand react component and creatung reusable react component.
+It is repo to understand react component and creating reusable react component.
 
 ## To build the project 
 ### npm run build
