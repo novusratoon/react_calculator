@@ -10,8 +10,11 @@
   "author": "Dnyaneshwar Bhalerao",
   "license": "ISC",
   "dependencies": {
+    "prop-type": "0.0.1",
+    "prop-types": "^15.7.2",
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "react-ga": "^2.6.0"
   },
   "devDependencies": {
     "babel-core": "^6.24.0",

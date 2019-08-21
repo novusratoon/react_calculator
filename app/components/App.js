@@ -1,26 +1,22 @@
 var React = require('react');
 var Row= require('./Row');
 var Display = require('./Display');
+var ReactGA = require('react-ga');
+var GA = require('../ga');
+
+function initGA () {
+  ReactGA.initialize(GA.trackingId);
+}
+
 class App extends React.Component{
 	constructor(props) {
     	super(props);
     	this.state = {value: this.props.initialValue};
       this.handleOnClick = this.handleOnClick.bind(this);
+      initGA();
   }
-	
-  render(){
-		return (
-			<div>
-				<Display value={this.state.value}/>
-        <Row b1={"1"} b2={"2"} b3={"3"} b4={"+"} b5={"-"} onClick={this.handleOnClick}/>
-        <Row b1={"4"} b2={"5"} b3={"6"} b4={"*"} b5={"/"} onClick={this.handleOnClick}/>
-        <Row b1={"7"} b2={"8"} b3={"9"} b4={"("} b5={")"} onClick={this.handleOnClick}/>
-        <Row b1={"0"} b2={" "} b3={"."} b4={"="} b5={"C"} onClick={this.handleOnClick}/>
-			</div>
-			);
-	}
+
   handleOnClick(e){
-    console.log("In App handleOnClick and the Value is "+e.target.value);
     switch(e.target.value){
       case ' ' : break;
       case '=' :
@@ -41,6 +37,18 @@ class App extends React.Component{
             else
               this.setState({value: this.state.value+e.target.value});
     }
+  }
+	
+  render(){
+		return (
+			<div>
+				<Display value={this.state.value}/>
+        <Row b1={"1"} b2={"2"} b3={"3"} b4={"+"} b5={"-"} onClick={this.handleOnClick}/>
+        <Row b1={"4"} b2={"5"} b3={"6"} b4={"*"} b5={"/"} onClick={this.handleOnClick}/>
+        <Row b1={"7"} b2={"8"} b3={"9"} b4={"("} b5={")"} onClick={this.handleOnClick}/>
+        <Row b1={"0"} b2={" "} b3={"."} b4={"="} b5={"C"} onClick={this.handleOnClick}/>
+			</div>
+			);
   }
 }
 	
