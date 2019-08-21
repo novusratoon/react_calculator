@@ -14,8 +14,6 @@ class App extends React.Component{
     	super(props);
     	this.state = {value: this.props.initialValue};
       this.handleOnClick = this.handleOnClick.bind(this);
-      initGA();
-    console.log("Init", ga);
   }
 
   handleOnClick(e){
@@ -29,8 +27,10 @@ class App extends React.Component{
               break;
       default : 
             if(this.state.value=="0"){
-              if(e.target.value=="+"||e.target.value=="-"||e.target.value=="*"||e.target.value=="/")
+              if(e.target.value=="+"||e.target.value=="-"||e.target.value=="*"||e.target.value=="/"){
+                ga.pageview({path: window.location});
                 this.setState({value: this.state.value+e.target.value});
+              }
               else if(e.target.value==" ")
                 this.setState({ value : '0'});
               else
@@ -39,6 +39,11 @@ class App extends React.Component{
             else
               this.setState({value: this.state.value+e.target.value});
     }
+  }
+
+  componentDidMount() {
+    initGA();
+    console.log("Init component", ga);
   }
 	
   render(){
