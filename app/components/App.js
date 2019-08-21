@@ -1,11 +1,12 @@
 var React = require('react');
 var Row= require('./Row');
 var Display = require('./Display');
-var ReactGA = require('react-ga');
+var ga = require('react-ga');
 var GA = require('../ga');
 
 function initGA () {
-  ReactGA.initialize(GA.trackingId);
+  ga.initialize(GA.trackingId);
+  console.log("Google")
 }
 
 class App extends React.Component{
@@ -14,6 +15,7 @@ class App extends React.Component{
     	this.state = {value: this.props.initialValue};
       this.handleOnClick = this.handleOnClick.bind(this);
       initGA();
+    console.log("Init", ga);
   }
 
   handleOnClick(e){

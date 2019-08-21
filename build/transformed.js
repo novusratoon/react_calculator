@@ -9503,12 +9503,12 @@ module.exports = ReactPropTypesSecret;
 var React = __webpack_require__(20);
 var Row = __webpack_require__(87);
 var Display = __webpack_require__(86);
-var ReactGA = __webpack_require__(183);
+var ga = __webpack_require__(183);
 var GA = __webpack_require__(88);
 
 function initGA() {
-  console.error('Initialization of GA', GA.trackingId);
-  ReactGA.initialize(GA.trackingId);
+  ga.initialize(GA.trackingId);
+  console.log("Google");
 }
 
 class App extends React.Component {
@@ -9517,6 +9517,7 @@ class App extends React.Component {
     this.state = { value: this.props.initialValue };
     this.handleOnClick = this.handleOnClick.bind(this);
     initGA();
+    console.log("Init", ga);
   }
 
   handleOnClick(e) {
@@ -9633,7 +9634,7 @@ module.exports = Row;
 /* 88 */
 /***/ (function(module, exports) {
 
-
+module.exports = { trackingId: "UA-146144553-1" };
 
 /***/ }),
 /* 89 */
