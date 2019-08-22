@@ -6,6 +6,7 @@ var GA = require('../ga');
 
 function initGA () {
   ga.initialize(GA.trackingId);
+  ga.pageview(window.location.pathname + window.location.search);
   console.log("Google")
 }
 
