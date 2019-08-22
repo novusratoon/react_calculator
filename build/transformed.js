@@ -9508,6 +9508,7 @@ var GA = __webpack_require__(88);
 
 function initGA() {
   ga.initialize(GA.trackingId);
+  ga.pageview(window.location.pathname + window.location.search);
   console.log("Google");
 }
 
